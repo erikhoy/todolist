@@ -10,7 +10,7 @@ class ListItem {
 	public function create() {
 		global $database;
 
-		$sql = "INSERT INTO listItems (name, priority) VALUES ('".$database->escape_string($this->name)."')";
+		$sql = "INSERT INTO listItems (name) VALUES ('".$database->escape_string($this->name)."')";
 
 		if($database->query($sql)) {
 			$this->id = $database->the_insert_id();
